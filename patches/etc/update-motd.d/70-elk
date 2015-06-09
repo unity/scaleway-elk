@@ -2,7 +2,7 @@
 
 if [ -f /root/.kibana.passwd ]; then
     cat <<EOF
-To access Kibana, open http://$(/usr/local/bin/oc-metadata PUBLIC_IP_ADDRESS)/.
+To access Kibana, open http://$(/usr/local/bin/oc-metadata --cached PUBLIC_IP_ADDRESS)/.
 Login with user kibana and password -> $(cat /root/.kibana.passwd) <-
 EOF
 fi
