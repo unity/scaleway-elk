@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ -f /root/.kibana.passwd ]; then
+    cat <<EOF
+To access Kibana, open http://$(/usr/local/bin/oc-metadata PUBLIC_IP_ADDRESS)/.
+Login with user kibana and password -> $(cat /root/.kibana.passwd) <-
+EOF
+fi
+
+cat <<EOF
+You can hide this message on the next connection by deleting the $0 file.
+EOF
