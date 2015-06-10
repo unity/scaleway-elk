@@ -4,7 +4,7 @@ VERSION =		latest
 VERSION_ALIASES =	14.10 14 latest utopic
 TITLE =			ELK stack
 DESCRIPTION =		ELK stack
-DOCUMENTATION_URL =	https://scaleway.com/docs/how-to-use-the-elk-stack-instant-apps/
+DOC_URL =		https://scaleway.com/docs/how-to-use-the-elk-stack-instant-apps/
 SOURCE_URL =		https://github.com/scaleway/image-app-elk
 IMAGE_VOLUME_SIZE =	50G
 
