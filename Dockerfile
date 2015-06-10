@@ -32,7 +32,7 @@ RUN tar -xf /tmp/kibana-4.0.2-linux-x86.tar.gz -C /opt \
   && mv /opt/kibana-4.0.2-linux-x86 /opt/kibana \
   && sed -i 's/host: ".*"/host: "localhost"/' /opt/kibana/config/kibana.yml
 
-RUN apt-get install pwgen -y -qq
+RUN apt-get install pwgen libc6-dev -y -qq
 ADD ./patches/etc/ /etc/
 ADD ./patches/opt/kibana/bin/ /opt/kibana/bin
 ADD ./patches/opt/logstash/vendor/jruby/lib/jni/arm-Linux/ /opt/logstash/vendor/jruby/lib/jni/arm-Linux
@@ -42,7 +42,8 @@ RUN update-rc.d kibana4_init defaults 95 10 \
   && update-rc.d elasticsearch defaults 95 10 \ 
   && update-rc.d logstash defaults 95 10
 
-RUN chmod 1777 /tmp
+RUN chmod 1777 /tmp \
+  && addgroup logstash adm
 
 # Clean rootfs from image-builder
 RUN /usr/local/sbin/builder-leave
