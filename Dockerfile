@@ -11,7 +11,7 @@ RUN /usr/local/sbin/builder-enter
 RUN apt-get -q update \
   && apt-get --force-yes -y -qq upgrade
 
-ENV ELASTICSEARCH_VERSION 1.5.2
+ENV ELASTICSEARCH_VERSION 1.6.0
 ENV LOGSTASH_VERSION 1.5.0-1
 ENV KIBANA_VERSION 4.0.2
 RUN cd /tmp \
