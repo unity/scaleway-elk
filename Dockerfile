@@ -13,7 +13,7 @@ RUN apt-get -q update \
 
 ENV ELASTICSEARCH_VERSION 1.6.0
 ENV LOGSTASH_VERSION 1.5.1
-ENV KIBANA_VERSION 4.0.2
+ENV KIBANA_VERSION 4.1.0
 RUN cd /tmp \
   && wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-${ELASTICSEARCH_VERSION}.deb \
   && wget http://download.elastic.co/logstash/logstash/packages/debian/logstash_${LOGSTASH_VERSION}_all.deb \
