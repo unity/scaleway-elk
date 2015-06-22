@@ -1,7 +1,7 @@
 DOCKER_NAMESPACE =	armbuild/
 NAME =			scw-app-elk
 VERSION =		latest
-VERSION_ALIASES =	14.10 14 latest utopic
+VERSION_ALIASES =	
 TITLE =			ELK stack
 DESCRIPTION =		ELK stack
 DOC_URL =		https://scaleway.com/docs/how-to-use-the-elk-stack-instant-apps/
