@@ -2,22 +2,27 @@
 FROM armbuild/scw-app-java:latest
 MAINTAINER Scaleway <opensource@scaleway.com> (@scaleway)
 
+
 # Prepare rootfs for image-builder
 RUN /usr/local/sbin/builder-enter
+
 
 # Upgrade packages
 RUN apt-get -q update \
   && apt-get --force-yes -y -qq upgrade
 
+ENV ELASTICSEARCH_VERSION 1.5.2
+ENV LOGSTASH_VERSION 1.5.0-1
+ENV KIBANA_VERSION 4.0.2
 RUN cd /tmp \
-  && wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.5.2.deb \
-  && wget http://download.elastic.co/logstash/logstash/packages/debian/logstash_1.5.0-1_all.deb \
-  && wget https://download.elastic.co/kibana/kibana/kibana-4.0.2-linux-x86.tar.gz
+  && wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-${ELASTICSEARCH_VERSION}.deb \
+  && wget http://download.elastic.co/logstash/logstash/packages/debian/logstash_${LOGSTASH_VERSION}_all.deb \
+  && wget https://download.elastic.co/kibana/kibana/kibana-${KIBANA_VERSION}-linux-x86.tar.gz
 
 
 RUN cd /tmp \
-  && dpkg -i elasticsearch-1.5.2.deb \
-  && dpkg -i logstash_1.5.0-1_all.deb
+  && dpkg -i elasticsearch-${ELASTICSEARCH_VERSION}.deb \
+  && dpkg -i logstash_${LOGSTASH_VERSION}_all.deb
 
 RUN sed -i 's/JDK_DIRS=".*"/JDK_DIRS="\/opt\/java\/jdk1.8.0_33"/' etc/init.d/elasticsearch \
   && sed -i 's/#network.host: .*/network.host: localhost/' /etc/elasticsearch/elasticsearch.yml \
@@ -28,8 +33,8 @@ RUN sed -i 's/JDK_DIRS=".*"/JDK_DIRS="\/opt\/java\/jdk1.8.0_33"/' etc/init.d/ela
 RUN curl -sL https://deb.nodesource.com/setup | sudo bash - \
   && apt-get install nodejs nginx apache2-utils -y -qq
 
-RUN tar -xf /tmp/kibana-4.0.2-linux-x86.tar.gz -C /opt \
-  && mv /opt/kibana-4.0.2-linux-x86 /opt/kibana \
+RUN tar -xf /tmp/kibana-${KIBANA_VERSION}-linux-x86.tar.gz -C /opt \
+  && mv /opt/kibana-${KIBANA_VERSION}-linux-x86 /opt/kibana \
   && sed -i 's/host: ".*"/host: "localhost"/' /opt/kibana/config/kibana.yml
 
 RUN apt-get install pwgen libc6-dev -y -qq
