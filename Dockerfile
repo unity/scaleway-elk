@@ -15,9 +15,9 @@ ENV ELASTICSEARCH_VERSION 1.6.0
 ENV LOGSTASH_VERSION 1.5.1-1
 ENV KIBANA_VERSION 4.1.0
 RUN cd /tmp \
-  && wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-${ELASTICSEARCH_VERSION}.deb \
-  && wget http://download.elastic.co/logstash/logstash/packages/debian/logstash_${LOGSTASH_VERSION}_all.deb \
-  && wget https://download.elastic.co/kibana/kibana/kibana-${KIBANA_VERSION}-linux-x86.tar.gz
+  && wget -q https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-${ELASTICSEARCH_VERSION}.deb \
+  && wget -q http://download.elastic.co/logstash/logstash/packages/debian/logstash_${LOGSTASH_VERSION}_all.deb \
+  && wget -q https://download.elastic.co/kibana/kibana/kibana-${KIBANA_VERSION}-linux-x86.tar.gz
 
 
 RUN cd /tmp \
