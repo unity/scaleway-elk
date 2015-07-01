@@ -49,6 +49,8 @@ RUN update-rc.d kibana4_init defaults 95 10 \
 
 RUN chmod 1777 /tmp \
   && addgroup logstash adm
+  
+RUN mkdir -p /var/run/elasticsearch
 
 # Clean rootfs from image-builder
 RUN /usr/local/sbin/builder-leave
