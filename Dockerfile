@@ -43,9 +43,8 @@ RUN tar -xf /tmp/kibana-${KIBANA_VERSION}-linux-x86.tar.gz -C /opt \
 
 RUN apt-get install pwgen libc6-dev -y -qq
 ADD ./patches/etc/ /etc/
-ADD ./patches/opt/kibana/bin/ /opt/kibana/bin
-ADD ./patches/opt/logstash/vendor/jruby/lib/jni/arm-Linux/ /opt/logstash/vendor/jruby/lib/jni/arm-Linux
-ADD ./patches/usr/local/bin/ /usr/local/bin/
+ADD ./patches/opt/ /opt/
+ADD ./patches/usr/ /usr/
 
 
 RUN update-rc.d kibana4_init defaults 95 10 \
