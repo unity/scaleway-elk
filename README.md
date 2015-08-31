@@ -1,6 +1,6 @@
-# Official Jenkins image on Scaleway
+# Official ELK image on Scaleway
 
-Scripts to build the official Jenkins image on Scaleway
+Scripts to build the official ELK image on Scaleway
 
 This image is built using [Image Tools](https://github.com/scaleway/image-tools) and depends on the official [Ubuntu](https://github.com/scaleway/image-ubuntu) image.
 
