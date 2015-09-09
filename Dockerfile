@@ -26,11 +26,9 @@ RUN cd /tmp \
   && dpkg -i logstash_${LOGSTASH_VERSION}_all.deb
 
 
-RUN sed -i 's/JDK_DIRS=".*"/JDK_DIRS="\/opt\/java\/jdk1.8.0_33"/' etc/init.d/elasticsearch \
-  && sed -i 's/#network.host: .*/network.host: localhost/' /etc/elasticsearch/elasticsearch.yml \
+RUN sed -i 's/#network.host: .*/network.host: localhost/' /etc/elasticsearch/elasticsearch.yml \
   && sed -i 's/#LS_OPTS=""/LS_OPTS="-w 4"/' /etc/default/logstash \
-  && sed -i 's/#LS_HEAP_SIZE="500m"/LS_HEAP_SIZE="1024m"/' /etc/default/logstash \
-  && sed -i '/export PATH/a export JAVA_HOME=\/opt\/java\/jdk1.8.0_33' /etc/init.d/logstash
+  && sed -i 's/#LS_HEAP_SIZE="500m"/LS_HEAP_SIZE="1024m"/' /etc/default/logstash
 
 
 RUN curl -sL https://deb.nodesource.com/setup | sudo bash - \
