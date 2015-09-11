@@ -1,5 +1,5 @@
-## -*- docker-image-name: "armbuild/scw-app-elk:latest" -*-
-FROM armbuild/scw-app-java:latest
+## -*- docker-image-name: "scaleway/elk:latest" -*-
+FROM scaleway/java:latest
 MAINTAINER Scaleway <opensource@scaleway.com> (@scaleway)
 
 
