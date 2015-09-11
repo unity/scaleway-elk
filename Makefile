@@ -1,5 +1,4 @@
-DOCKER_NAMESPACE =	armbuild/
-NAME =			scw-app-elk
+NAME =			elk
 VERSION =		latest
 VERSION_ALIASES =	
 TITLE =			ELK stack
