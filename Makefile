@@ -5,7 +5,7 @@ VERSION_ALIASES =
 TITLE =			ELK stack
 DESCRIPTION =		ELK stack
 DOC_URL =		https://scaleway.com/docs/how-to-use-the-elk-stack-instant-apps/
-SOURCE_URL =		https://github.com/scaleway/image-app-elk
+SOURCE_URL =		https://github.com/scaleway-community/scaleway-elk
 
 IMAGE_VOLUME_SIZE =	50G
 IMAGE_BOOTSCRIPT =	stable
