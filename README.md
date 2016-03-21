@@ -4,7 +4,7 @@
 [![Scaleway ImageHub](https://img.shields.io/badge/ImageHub-view-ff69b4.svg)](https://hub.scaleway.com/elk.html)
 [![Run on Scaleway](https://img.shields.io/badge/Scaleway-run-69b4ff.svg)](https://cloud.scaleway.com/#/servers/new?image=d9bc56e5-0a20-41d8-b581-f54e636888c8)
 
-Launch your ELK app on Scaleway servers in minutes.
+Launch your ELK stack on Scaleway servers in minutes.
 
 
 <img src="https://raw.githubusercontent.com/blacktop/docker-elk/master/docs/elk-logo.png" width="400px" />
