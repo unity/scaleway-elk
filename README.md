@@ -1,25 +1,26 @@
-# ELK image on Scaleway
+# ELK image on Scaleway [5.1.2]
 
-[![Build Status](https://travis-ci.org/scaleway-community/scaleway-elk.svg?branch=master)](https://travis-ci.org/scaleway-community/scaleway-elk)
-[![Scaleway ImageHub](https://img.shields.io/badge/ImageHub-view-ff69b4.svg)](https://hub.scaleway.com/elk.html)
-[![Run on Scaleway](https://img.shields.io/badge/Scaleway-run-69b4ff.svg)](https://cloud.scaleway.com/#/servers/new?image=d9bc56e5-0a20-41d8-b581-f54e636888c8)
+Updating the Image on your server: 
 
-Launch your ELK stack on Scaleway servers in minutes.
+- Make updates to image, `commit`, `push`.
 
+```sh
+$ brew tap scaleway/scaleway
+$ brew install scaleway/scaleway/scw --HEAD
+$ scw login # enter your credentials
+$ scw run --name="elasticstack" image-builder
+```
 
-<img src="https://raw.githubusercontent.com/blacktop/docker-elk/master/docs/elk-logo.png" width="400px" />
+- Wait a few minutes. Check status in your Scaleway console.
+- When booted, you're at the prompt of your image, directly on a Scaleway machine.
+- Login again
 
+```sh
+$ scw login # credentials again
+git clone YOUR_REPO
+cd YOUR_REPO
+make image_on_local
+```
 
----
-
-## How to hack
-
-**This image is meant to be used on a Scaleway server.**
-
-We use the Docker's building system and convert it at the end to a disk image that will boot on real servers without Docker. Note that the image is still runnable as a Docker container for debug or for inheritance.
-
-[More info](https://github.com/scaleway/image-builder)
-
----
-
-A project by [![Scaleway](https://avatars1.githubusercontent.com/u/5185491?v=3&s=42)](https://www.scaleway.com/)
+Custom image is now available here: https://cloud.scaleway.com/#/images
+Based on instructions here: https://github.com/scaleway/image-builder
