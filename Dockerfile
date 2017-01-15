@@ -22,14 +22,14 @@ RUN apt-get -q update \
 
 ENV ELASTICSEARCH_VERSION=5.1.2 LOGSTASH_VERSION=5.1.2 KIBANA_VERSION=5.1.2
 RUN cd /tmp \
-  && wget -q https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-${ELASTICSEARCH_VERSION}.deb \
-  && wget -q http://download.elastic.co/logstash/logstash/packages/debian/logstash_${LOGSTASH_VERSION}_all.deb \
-  && wget -q https://download.elastic.co/kibana/kibana/kibana-${KIBANA_VERSION}-linux-x86.tar.gz
+  && wget -q https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${ELASTICSEARCH_VERSION}.deb \
+  && wget -q https://artifacts.elastic.co/downloads/logstash/logstash-${LOGSTASH_VERSION}.deb \
+  && wget -q https://artifacts.elastic.co/downloads/kibana/kibana-${KIBANA_VERSION}-linux-x86.tar.gz
 
 
 RUN cd /tmp \
   && dpkg -i elasticsearch-${ELASTICSEARCH_VERSION}.deb \
-  && dpkg -i logstash_${LOGSTASH_VERSION}_all.deb
+  && dpkg -i logstash-${LOGSTASH_VERSION}.deb
 
 
 RUN sed -i 's/#network.host: .*/network.host: localhost/' /etc/elasticsearch/elasticsearch.yml \
