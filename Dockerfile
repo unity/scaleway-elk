@@ -37,7 +37,7 @@ RUN sed -i 's/#network.host: .*/network.host: localhost/' /etc/elasticsearch/ela
   && sed -i 's/#LS_HEAP_SIZE="500m"/LS_HEAP_SIZE="1024m"/' /etc/default/logstash
 
 
-RUN curl -sL https://deb.nodesource.com/setup | sudo bash - \
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo bash - \
   && apt-get install nodejs nginx apache2-utils -y -qq
 
 
