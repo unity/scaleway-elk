@@ -43,6 +43,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo bash - \
 
 RUN tar -xf /tmp/kibana-${KIBANA_VERSION}-linux-x86.tar.gz -C /opt \
   && mv /opt/kibana-${KIBANA_VERSION}-linux-x86 /opt/kibana \
+  && chown -R nobody /opt/kibana \ 
   && sed -i 's/host: ".*"/host: "localhost"/' /opt/kibana/config/kibana.yml
 
 

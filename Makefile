@@ -1,8 +1,8 @@
-NAME =			elk
+NAME =			elastic
 VERSION =		latest
 VERSION_ALIASES =	
-TITLE =			ELK stack
-DESCRIPTION =		ELK stack
+TITLE =			Elastic stack
+DESCRIPTION =		Elastic stack
 DOC_URL =		https://scaleway.com/docs/how-to-use-the-elk-stack-instant-apps/
 SOURCE_URL =		https://github.com/scaleway-community/scaleway-elk
 DEFAULT_IMAGE_ARCH =	x86_64
@@ -10,7 +10,7 @@ DEFAULT_IMAGE_ARCH =	x86_64
 
 IMAGE_VOLUME_SIZE =	50G
 IMAGE_BOOTSCRIPT =	stable
-IMAGE_NAME =		ELK stack
+IMAGE_NAME =		Elastic stack
 
 
 ## Image tools  (https://github.com/scaleway/image-tools)
